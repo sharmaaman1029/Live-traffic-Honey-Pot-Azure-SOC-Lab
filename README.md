@@ -29,5 +29,13 @@ If Azure if not letting you make an account, you can go with the pay-as-yo-go su
 
 # Step 2 - Create the honey pot -> Your Windows 11 VM
 For this step it is recommended to follow azure's architecture and make a Resource group first which will contain all the components of your project.
+Here I created a resouce group RG1
+<img width="1898" height="967" alt="image" src="https://github.com/user-attachments/assets/9fdcc42f-a849-483d-bd2e-50661b92b545" />
+
+Make sure to configure a virtual network next..
+
+Finally make your Windows 11 virtual machine and in the resource group select your resource group (whatever you named) in my case RG1 and virtual network as well.
+<img width="1902" height="961" alt="image" src="https://github.com/user-attachments/assets/2d37da38-5415-4534-98ad-9d4fa6a1d26a" />
+<img width="1903" height="975" alt="image" src="https://github.com/user-attachments/assets/eab9dc72-a4ae-4077-91aa-1e3b3fb3f6f0" />
 
 
