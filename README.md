@@ -35,7 +35,44 @@ Here I created a resouce group RG1
 Make sure to configure a virtual network next..
 
 Finally make your Windows 11 virtual machine and in the resource group select your resource group (whatever you named) in my case RG1 and virtual network as well.
+
 <img width="1902" height="961" alt="image" src="https://github.com/user-attachments/assets/2d37da38-5415-4534-98ad-9d4fa6a1d26a" />
+
 <img width="1903" height="975" alt="image" src="https://github.com/user-attachments/assets/eab9dc72-a4ae-4077-91aa-1e3b3fb3f6f0" />
+
+Next you will go back to your resouce group and select Network Security Group (nsg) which must have been made automatically. In my case it is called CorpVM1-nsg
+
+<img width="1913" height="970" alt="image" src="https://github.com/user-attachments/assets/b5afa22e-a5d0-44de-a743-543db58b8fd9" />
+
+Here you will need to change the inbound rules for your virual machine
+Go to inbound rules under settings
+
+<img width="361" height="845" alt="image" src="https://github.com/user-attachments/assets/7d391983-8d3a-4cf5-832f-eef0201baa8b" />
+
+Delete the normal RDP rule and instead add this rule in your list
+
+<img width="721" height="982" alt="image" src="https://github.com/user-attachments/assets/becd56c7-dd5f-475d-a549-7f37d451af8c" /> 
+<img width="716" height="977" alt="image" src="https://github.com/user-attachments/assets/e3878a9f-be0c-47e3-9abf-782fa77c37d4" />
+
+This will make our VM super vulnerable and it can accept incoming traffic from the attackers.
+
+Apart from configuring you NSG, you will also need to log into your VM and turn off the windows firewall (start -> wf.msc -> properties -> all off)
+
+Here click on Windows defender firewall properties and turn everything off
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6cba97f0-b46a-4219-8dcf-65f6f270435b" />
+<img width="1304" height="976" alt="image" src="https://github.com/user-attachments/assets/e4ce0dba-e9a8-40ad-9da5-11e5265f9cee" />
+
+Just to confirm that your rules are working try pinging your VM using your own computer's powershell. Grab your VM's IP and use powershell to ping. 
+
+If your shell looks like this you are on the right track.
+
+<img width="1154" height="559" alt="image" src="https://github.com/user-attachments/assets/663c4c91-32c0-46a7-b4b5-f37215b7ca3e" />
+
+
+
+
+
+
 
 
