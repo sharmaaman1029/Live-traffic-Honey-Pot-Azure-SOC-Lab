@@ -109,6 +109,22 @@ Now we will create a rule which lets our VM to forward all of the log into LAW. 
 
 <img width="1918" height="977" alt="image" src="https://github.com/user-attachments/assets/51045c72-9917-4276-8901-88dfbfb47a94" />
 
+You might see I already have a rule named DCR in the list, I will show you how to create the rule now. 
+Click on create data collection rule -> Select your desired name, azure subscription and your resouce group you are using for the VM 
+
+<img width="1919" height="979" alt="image" src="https://github.com/user-attachments/assets/7fe4a7fb-85f4-4c30-aa2b-9eb5e50a5c25" />
+
+In the resouces tab just drop down the menu and select your Azure VM.
+
+<img width="1919" height="981" alt="image" src="https://github.com/user-attachments/assets/7d014adf-6ed8-4c7b-a6d3-7fcd79127325" />
+
+For the collect section select All security events and hit review + create
+
+<img width="1916" height="976" alt="image" src="https://github.com/user-attachments/assets/a6e33d80-8f6d-4032-8604-bc743fbcad60" />
+
+Now if you go back to your VM, go under settings -> extensions + applications you must be able to see your AMA getting installed.
+
+<img width="1916" height="972" alt="image" src="https://github.com/user-attachments/assets/e52143a1-869f-446d-bd95-14a0868e5368" />
 
 
 
