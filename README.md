@@ -69,6 +69,49 @@ If your shell looks like this you are on the right track.
 
 <img width="1154" height="559" alt="image" src="https://github.com/user-attachments/assets/663c4c91-32c0-46a7-b4b5-f37215b7ca3e" />
 
+# Step 3 - Logging into your VM and inspecting logs
+
+Next I am going to fail 3 login attemps into my VM while doing the RDP, the same thing attackers will be doing when they see our VM online.
+
+<img width="561" height="648" alt="image" src="https://github.com/user-attachments/assets/7e93f449-3122-4b96-af4b-53b042a6699e" />
+
+You can go to event viewer on you Windows VM and see the log inside Windows logs -> security and see the logs with the event ID of 4625 which as per windows is "This event is generated when a logon request fails. It is generated on the computer where access was attempted."
+
+<img width="1866" height="1122" alt="image" src="https://github.com/user-attachments/assets/20a42bd7-ddeb-43f7-9566-15831e81f858" />
+
+Now we will create a central log repository where all of these logs can be directed for us on Azure.
+
+# Step 4 - Setting up Log Analytics Workspace 
+
+To start up with this part first we will need to create a Log analytics workspace. Simply go to search bar search Log analytics workspace and click create
+
+<img width="1919" height="1091" alt="image" src="https://github.com/user-attachments/assets/4f796481-a4e9-4f7a-93d7-42ff79bebbb0" />
+
+Make sure to use the same resource group as your VM, here I named my Log analytics workspace as LAW1.
+
+<img width="1919" height="977" alt="image" src="https://github.com/user-attachments/assets/babc10e2-518c-4354-8bcd-e2a4c18cb585" />
+
+Next if you go to Microsoft Sential, you should be able to see your LAW1 in the Sentinal.
+
+<img width="1917" height="978" alt="image" src="https://github.com/user-attachments/assets/1644e32d-b9c5-4441-86aa-c1c6e3b46704" />
+
+By doing this, we have connected our LAW to Microsoft Sentinal, but we are still missing a connector between our VM and the LAW.
+
+Now we will install the Windows security event connector - go to your Sentinal instance -> click on the LAW instance -> Go to content hub ( under content management ) -> Search windows security event and click install. (In my case it says manage cause I have already installed it)
+
+<img width="1919" height="976" alt="image" src="https://github.com/user-attachments/assets/f5fca67a-02a7-4944-b932-bea6fc28b618" />
+
+After the installation is complete click manage and select Windows security event via AMA (Azure monitoring agent) and click on open connector page.
+
+<img width="1918" height="975" alt="image" src="https://github.com/user-attachments/assets/de253cc6-b123-4d0e-bf73-af3490d34f07" />
+
+Now we will create a rule which lets our VM to forward all of the log into LAW. It also creates a new object inside our resouce group, which I will show later on.
+
+<img width="1918" height="977" alt="image" src="https://github.com/user-attachments/assets/51045c72-9917-4276-8901-88dfbfb47a94" />
+
+
+
+
 
 
 
