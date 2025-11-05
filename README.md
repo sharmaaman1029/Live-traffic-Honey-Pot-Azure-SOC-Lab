@@ -145,6 +145,7 @@ After you are done with this step, make sure to leave your VM running for atleas
 
 # Step 5 - Enriching your logs and finding location data.
 
+Now our VM will be attacked by hackers from around the world, and their IP addresses will be recorded in our logs. To plot those IP addresses on a map and see which parts of the world are targeting our VM, we need geographic data that maps each IP block to a location. We will use the file geoip-summarized.csv to resolve IP addresses to physical locations for mapping.
 
 
 
