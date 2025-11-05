@@ -126,6 +126,30 @@ Now if you go back to your VM, go under settings -> extensions + applications yo
 
 <img width="1916" height="972" alt="image" src="https://github.com/user-attachments/assets/e52143a1-869f-446d-bd95-14a0868e5368" />
 
+Now we can try querying the log within LAW. For that go to your LAW instance and go to logs. Here you might need to select KQL mode instead of simple mode in order to query KQL.
+
+<img width="1919" height="977" alt="image" src="https://github.com/user-attachments/assets/d63fcbb4-3813-4657-a146-7cf07f870413" />
+
+You can use this query to see the failed login attempts into your VM. Just type this query and hit run
+
+SecurityEvent
+| where EventID == 4625
+
+If you are unable to see anything, try failing some RDP logins into your VM and you should be able to see those attempts in your logs. If you don't see anything yet, just make sure your AMA for your VM is installed all the way to provisioning succeded.
+
+<img width="1919" height="974" alt="image" src="https://github.com/user-attachments/assets/a2b1f267-5be5-446c-8470-885c8516a2ca" />
+
+We can query the log from LAW and the Sentinal both.
+
+After you are done with this step, make sure to leave your VM running for atleast 1-2 hours so attackers can see your VM and you can start getting those juicy logs inside your LAW and Sentinal.
+
+# Step 5 - Enriching your logs and finding location data.
+
+
+
+
+
+
 
 
 
