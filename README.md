@@ -198,9 +198,24 @@ Here edit and remove the sample elements and click on add source + visualization
 
 <img width="1916" height="1020" alt="image" src="https://github.com/user-attachments/assets/576bac3f-1267-435f-9d25-43780189043c" />
 
-Here go to the advanced editor option and paste the json code given above ( file is called map ).
+Here go to the advanced editor option, remove the given code and paste the json code given above. ( file is called map ). Hit Apply and click on done editing.
 
-<img width="1919" height="974" alt="image" src="https://github.com/user-attachments/assets/be6c211b-53cf-473e-8e9b-6d3830faa215" />
+<img width="1919" height="975" alt="image" src="https://github.com/user-attachments/assets/e8e66ce8-5fbe-4844-a760-019ff753230b" />
+
+And with that your attack map will be created 
+
+<img width="1918" height="970" alt="image" src="https://github.com/user-attachments/assets/227f67d0-a8d4-4728-8e19-b32b73108ac6" />
+
+You can also change the Map settings using the edit -> Visual formatting and we have whole bunch of map setting you can play with.
+
+<img width="1899" height="977" alt="image" src="https://github.com/user-attachments/assets/4dc3fae5-8843-457e-8b0c-961713441d16" />
+
+# So this is how I created a live honey net using a Azure VM and then made a attack map using Azure Sentinal. 
+
+A huge shoutout to Josh Madakor - who created the live demo od this project. Do make sure to check his video out on YT. It is really detailed and I really like how he explains everything so well.
+https://www.youtube.com/watch?v=g5JL2RIbThM&t=3438s
+
+
 
 
 
