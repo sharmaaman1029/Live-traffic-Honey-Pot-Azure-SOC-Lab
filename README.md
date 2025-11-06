@@ -147,13 +147,60 @@ After you are done with this step, make sure to leave your VM running for atleas
 
 Now our VM will be attacked by hackers from around the world, and their IP addresses will be recorded in our logs. To plot those IP addresses on a map and see which parts of the world are targeting our VM, we need geographic data that maps each IP block to a location. We will use the file geoip-summarized.csv to resolve IP addresses to physical locations for mapping.
 
+If we observe the SecurityEvent logs in the Log Analytics Workspace; there is no location data, only IP address, which we can use to derive the location data.
+<img width="1456" height="630" alt="image" src="https://github.com/user-attachments/assets/d6a9352a-9937-4cc0-a331-a614d96d0e1b" />
 
+Next we are going to import a spreadsheet geoip-summarized.csv, referred to as a “Sentinel Watchlist,” which contains geographic information for each block of IP addresses.
 
+So go to sentinal click on your LAW and then go to Watchlist right under configuration and click on the link for the defender portal
 
+<img width="1919" height="980" alt="image" src="https://github.com/user-attachments/assets/00deab6b-3a97-4b19-9b0c-37896d0be6d7" />
 
+Repeat the same steps, go to Microsoft sentinal -> Configuration -> Watchlist -> click +New
 
+<img width="1919" height="985" alt="image" src="https://github.com/user-attachments/assets/5ac24af2-6200-4283-b68c-7394d88d9ba1" />
 
+Give your preferred name for the watchlist and alias
 
+<img width="1919" height="958" alt="image" src="https://github.com/user-attachments/assets/495becac-a3ef-4058-9ed9-7bd4c163256c" />
+
+Next download the geoip-summarized.csv file from above and upload it here. For the search key select Network and hit review + create.
+
+<img width="1894" height="969" alt="image" src="https://github.com/user-attachments/assets/12d1ef41-5352-4993-a949-69b110ba3d6e" />
+
+Once you are done, it will dump you back to the watchlist page and you will be able to see your watchlist in the menu. Let it upload until it is like 100%.
+
+<img width="1895" height="974" alt="image" src="https://github.com/user-attachments/assets/fa560186-8af6-48f4-96f8-bc1ffd8fe0db" />
+
+Now as our watchlist is inside Azure, we can use it to resolve any IP address of an attacker to see what is it's gergraphical location. For example - Let me choose one single attacker's IP address from our LAW log.
+
+<img width="1067" height="731" alt="image" src="https://github.com/user-attachments/assets/09a053ee-5cd4-40f5-9892-4212c6adbc1b" />
+
+Here I want to see where is the IP address 162.12.208.107 from. We can use the following KQP query to resolve the IP using our watchlist.
+
+Here in the log we can see that it is from Moscow, Russia. We even get the longitude and latitude from our watchlist.
+
+<img width="1102" height="740" alt="image" src="https://github.com/user-attachments/assets/746caec3-66b7-4620-bb17-ce342e93ff22" />
+
+# Step 6 - Creating The Attack Map
+
+Now using our watchlist, logs and sentinal we will create a attack map which clearly depicts where the attack is coming from.
+
+Go to your Sentinal instance and click on Workbooks under Threat Management and then click on the Defender portal link.
+
+<img width="1919" height="977" alt="image" src="https://github.com/user-attachments/assets/345a43b3-969b-4c4f-9431-39cc01703629" />
+
+Under Microsoft Sentinal -> Threat Management -> Workbooks -> click on + Add workbook
+
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/3c3f1441-374f-4096-acf2-440ca196e72c" />
+
+Here edit and remove the sample elements and click on add source + visualization.
+
+<img width="1916" height="1020" alt="image" src="https://github.com/user-attachments/assets/576bac3f-1267-435f-9d25-43780189043c" />
+
+Here go to the advanced editor option and paste the json code given above ( file is called map ).
+
+<img width="1919" height="974" alt="image" src="https://github.com/user-attachments/assets/be6c211b-53cf-473e-8e9b-6d3830faa215" />
 
 
 
